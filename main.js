@@ -5,10 +5,6 @@ const getRandomNumber = (min, max) => {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max-min+1)) + min;
 }
-//
-// $('#button__confidence--js').on('click', function() {
-//   $('#section__goal--exceed--js').removeClass('hide');
-// })
 
 // UPDATE Button handler
 $('#submit-range-button').on('click', function(event) {
@@ -22,13 +18,20 @@ $('#submit-range-button').on('click', function(event) {
 // SUBMIT GUESS button handler
 $('#submit-guess-button').on('click', function(event) {
   event.preventDefault();
-  requireCompletedInputs();
+  if (requireCompletedInputs()) {
+    playGameHandler();
+  }
+})
+
+// handler to fire only if inputs are requireCompletedInputs
+const playGameHandler = () => {
   validGuessWithinRange('#guess-one-input', '#guess-one-error');
   validGuessWithinRange('#guess-two-input', '#guess-two-error');
   displayNamesAndGuesses();
   giveGuessFeedback('#guess-one-input', '.high-low-one');
   giveGuessFeedback('#guess-two-input', '.high-low-two');
-})
+}
+
 
 const validGuessWithinRange = (guess, display) => {
   if ($(guess).val() < Number($('#range-start').text())) {
@@ -60,7 +63,9 @@ const giveGuessFeedback = (guess, display) => {
 const requireCompletedInputs = () => {
   if (!$('#name-one-input').val() || !$('#name-two-input').val() || !$('#guess-one-input').val() || !$('#guess-two-input').val()) {
     $('#incomplete-input-error').removeAttr('hidden')
+    return false
   } else {
     $('#incomplete-input-error').attr('hidden', true)
+    return true
   }
 }
