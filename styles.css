@@ -1,0 +1,568 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #404041;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+h1 {
+  color: #DD1972;
+  font-size: 80px;
+}
+
+.light-title {
+  font-weight: 300;
+}
+
+.subheader-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.white-subheader {
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 27px;
+  text-align: center;
+}
+
+.white-line {
+  margin: 0px 15px;
+  background-color: #ffffff;
+  height: 1px;
+  width: 8.8%;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-column {
+  width: 50%;
+  background-color: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: space-around;
+}
+
+.min-range,
+.max-range {
+  width: 90%;
+}
+
+.game-box {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+  border: 2px solid lightgrey;
+  margin: 20px 20px;
+}
+
+.game-box-score {
+  display: flex;
+  flex-direction: column;
+  margin: 7px 15px;
+  background-color: #ffffff;
+  border: 2px solid lightgrey;
+}
+
+.range-input-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 15px 0px 15px;
+}
+
+.range-label {
+  width: 38%;
+}
+
+.error-message {
+  color: #DD1972;
+  margin: 0px 0px 0px 15px;
+  width: 100%;
+}
+
+.error-placeholder {
+  height: 28px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.guess-error {
+  text-align: right;
+  margin-left: -26px;
+}
+
+.error-icon {
+  width: 17px;
+}
+
+.range-start,
+.range-end {
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+p {
+  font-size: 20px;
+  margin: 10px 0px 10px 15px;
+  color: #6e6e6e;
+}
+
+.challengers-and-guesses {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 16px;
+}
+
+
+input {
+  width: 190px;
+  height: 38px;
+  padding: 10px;
+  margin: 4px 0px 0px 0px;
+  font-size: 20px;
+}
+
+input:not([type=submit]):hover,
+input:not([type=submit]):focus {
+  border: 2px solid #DD1972;
+  outline: #DD1972;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 300;
+  font-size: 20px;
+  color: #6e6e6e;
+}
+
+.name-label {
+  width: 65%;
+}
+
+.guess-label {
+  width: 32%;
+}
+
+.guess-input {
+  width: 100%;
+}
+
+.name-input {
+  width: 100%;
+}
+
+h5 {
+  font-weight: 700;
+  font-size: 24px;
+  color: #6e6e6e;
+  padding: 11px 0 0px 15px;
+}
+
+.latest-and-blank {
+  margin: 10px 0 0 0;
+  font-weight: 700;
+  display: block;
+  padding: 0px 15px;
+}
+
+.card-two-buttons {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  padding-bottom: 15px;
+}
+
+.current-guess-boxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.vertical-line {
+  border-left: 2px solid lightgrey;
+  height: 230px;
+}
+
+.current-guess-box-one,
+.current-guess-box-two {
+  width: 50%;
+  margin: 0px 10px 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.challenger-one-guess,
+.challenger-two-guess {
+  font-weight: 700;
+  color: #F74D9B;
+  font-size: 100px;
+  margin: -10px 0 0 0;
+}
+
+.high-low-one,
+.high-low-two {
+  font-size: 26px;
+  color: #6e6e6e;
+}
+
+.guess {
+  margin: -2px;
+  font-size: 22px;
+  color: #6E6E6E;
+}
+
+.button {
+  height: 40px;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 0px 27px;
+  background-color: #6e6e6e;
+  border: 0;
+  color: #ffffff;
+  margin: 30px 0px 0px 0px;
+  width: auto;
+  cursor: pointer;
+  outline: 0;
+}
+
+.button:hover,
+.button:focus,
+.x-button:hover,
+.x-button:focus {
+  background-color: #DD1972;
+  outline: 0;
+}
+
+.reset-button,
+.clear-button,
+.reset-button:hover,
+.clear-button:hover {
+  background-color: #D0D2D3;
+  cursor: not-allowed;
+}
+
+.right-column {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #D0D2D3;
+  border-left: 2px solid darkgrey;
+}
+
+#winner-card {
+  border: 2px solid darkgrey;
+  margin: 20px;
+  width: 88%;
+  color: #6e6e6e;
+  display: none;
+}
+
+.winner-card-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+}
+
+.winner-card-top-span {
+  width: 45%;
+  text-align: center;
+}
+
+.vs-names {
+  font-size: 19px;
+  margin: 11px 0;
+  font-weight: 700;
+  padding: 0;
+}
+
+.vs {
+  padding: 0px 20px;
+  margin: 6px 6px 0px 6px;
+  font-size: 1.1rem;
+}
+
+.winner-card-middle-box {
+  display: flex;
+  justify-content: center;
+}
+
+.winner-card-middle-text-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  border-top: 2px solid lightgrey;
+  border-bottom: 2px solid lightgrey;
+}
+
+h3 {
+  margin: -6px;
+  font-weight: 300;
+  font-size: 2.3rem;
+}
+
+.winner-card-name {
+  font-weight: 700;
+  padding-bottom: 3px;
+  text-align: center;
+}
+
+.winner-card-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px 0px 20px;
+  font-size: 1.2rem;
+}
+
+.winner-card-stats {
+  padding: 10px;
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.bottom-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.lighter-h {
+  font-weight: 300;
+  font-size: 1.2rem;
+  margin-left: 0;
+  padding: 0;
+}
+
+.x-button {
+  background-color: #6E6E6E;
+  color: lightgrey;
+  border: 0;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 27px;
+  font-weight: 300;
+  padding: 0px 0px 4px 0px;
+  line-height: 15px;
+  cursor: pointer;
+  outline: 0;
+}
+
+@media screen and (max-width: 1250px) {
+
+  .card-two-buttons {
+    flex-direction: column;
+  }
+
+  .button {
+    margin: 10px 5px;
+  }
+
+  .update-button {
+    width: 30%;
+    text-align: center;
+  }
+
+  .name-label {
+    margin: 0px 0px 5px;
+  }
+
+  .range-input-box {
+    flex-direction: column;
+  }
+
+  .range-label {
+    width: 100%;
+  }
+
+  .min-range,
+  .max-range {
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width: 800px) {
+
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left-column,
+  .right-column {
+    width: 100%;
+  }
+
+  .winner-card-top{
+    flex-direction: column;
+  }
+
+  .winner-card-top-span {
+    width: 100%;
+  }
+
+  .vs-names {
+    margin: 0;
+  }
+
+  .winner-card-name {
+    width: 100%;
+  }
+
+  .winner-card-middle-text-box {
+    width: 90%;
+  }
+
+}
+
+@media screen and (max-width: 550px) {
+
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left-column,
+  .right-column {
+    width: 100%;
+  }
+
+  .subheader-box {
+    width: 100%;
+  }
+
+  .white-line {
+    width: 13%;
+  }
+
+  h1 {
+    font-size: 43px;
+  }
+
+  .white-subheader {
+    font-size: 16px;
+  }
+
+  .range-input {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .challengers-and-guesses {
+    flex-direction: column;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  .name-label {
+    width: 100%;
+  }
+
+  .guess-label {
+    width: 100%;
+  }
+
+  .card-two-buttons {
+    flex-direction: column;
+    padding: 5%;
+  }
+
+  .button {
+    margin: 10px 0px;
+  }
+
+  .range-input-box {
+    flex-direction: column;
+  }
+
+  .range-label {
+    width: 100%;
+  }
+
+  .update-button {
+    width: 35%;
+  }
+
+  .current-guess-boxes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vertical-line {
+    border-bottom: 2px solid lightgrey;
+    height: 0;
+    width: 85%;
+  }
+
+  .current-guess-box-one,
+  .current-guess-box-two {
+    width: 100%;
+  }
+
+  .winner-card-top {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .winner-card-middle-text-box {
+    margin: 11px
+  }
+
+  .winner-card-name {
+    width: 100%;
+    text-align: center;
+    font-size: 34px;
+  }
+
+  .vs-names {
+    margin: 0;
+  }
+
+  .vs {
+    margin: 0;
+  }
+
+  .winner-card-stats{
+    padding: 0px 5px 0px 0px;
+  }
+
+  .winner-card-bottom {
+    padding: 0px 15px 10px 15px;
+  }
+
+}
