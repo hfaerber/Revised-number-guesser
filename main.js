@@ -27,11 +27,11 @@ $('#submit-guess-button').on('click', function(event) {
 
 // handler to fire only if inputs are requireCompletedInputs
 const playGameHandler = () => {
-  validGuessWithinRange('#guess-one-input', '#guess-one-error');
-  validGuessWithinRange('#guess-two-input', '#guess-two-error');
+  validateGuessWithinRange('#guess-one-input', '#guess-one-error');
+  validateGuessWithinRange('#guess-two-input', '#guess-two-error');
   displayNamesAndGuesses();
-  giveGuessFeedback('#guess-one-input', '.high-low-one');
-  giveGuessFeedback('#guess-two-input', '.high-low-two');
+  giveGuessFeedback('#guess-one-input', '.high-low-one', '#score-card-name-one');
+  giveGuessFeedback('#guess-two-input', '.high-low-two', '#score-card-name-one');
 }
 
 const validateCustomRange = () => {
@@ -44,7 +44,7 @@ const validateCustomRange = () => {
   }
 }
 
-const validGuessWithinRange = (guess, display) => {
+const validateGuessWithinRange = (guess, display) => {
   if ($(guess).val() < Number($('#range-start').text())) {
     $(display).removeAttr('hidden')
   } else if ($(guess).val() > Number($('#range-end').text())) {
@@ -68,26 +68,27 @@ const giveGuessFeedback = (guess, display, player) => {
     $(display).text("that's too low")
   } else {
     $(display).text("that's correct!")
-    addWinnerCard();
+    let winner = $(player).text();
+    addWinnerCard(winner);
   }
 }
 
-const addWinnerCard = (player) => {
+const addWinnerCard = (winner) => {
   $('#right-column').prepend(`<article class="game-box" id="winner-card">
     <div class="winner-card-top">
       <span class="winner-card-top-span">
-        <h5 class="score-card-name-one vs-names player-one-name">CHALLENGER 1 NAME</h5>
+        <h5 class="score-card-name-one vs-names player-one-name">${$('#score-card-name-one').text()}</h5>
       </span>
       <p class="vs">vs</p>
       <span class="winner-card-top-span">
-        <h5 class="score-card-name-two vs-names player-two-name">CHALLENGER 2 NAME</h5>
+        <h5 class="score-card-name-two vs-names player-two-name">${$('#score-card-name-two').text()}</h5>
       </span>
     </div>
     <div class="winner-card-middle-box">
       <div class="winner-card-middle-text-box">
         <span class="winner-card-name">
           <h3 class="winner-card-name"
-            id="winner-card-name">CHALLENGER 2 NAME</h3>
+            id="winner-card-name">${winner}</h3>
         </span>
         <h3>WINNER</h3>
       </div>
