@@ -8,6 +8,7 @@
       href=
         "https://fonts.googleapis.com/css?family=Open+Sans:300,700&display=swap"
       rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
@@ -37,13 +38,12 @@
           </form>
           <div class="error-placeholder">
           <p class="error-message" hidden>
-            <img class="error-icon" src="assets/error-icon.svg"
-            alt="Error!"> Error! Invalid Entry</p>
+            Error! Invalid Entry</p>
           </div>
         </article>
         <article class="game-box">
-          <p>The Current Range is <span class="range-start">1</span> to
-            <span class="range-end">100</span></p>
+          <p>The Current Range is <span class="range-start" id="range-start">1</span> to
+            <span class="range-end" id="range-end">100</span></p>
           <form action=" ">
             <h5>Challenger 1</h5>
               <div class="challengers-and-guesses">
@@ -54,13 +54,11 @@
                   <input class="guess-input" id="guess-one-input" type="number"
                     name="guess-one"></label>
               </div>
-              <p class="error-message guess-error" hidden>
-                <img class="error-icon" src="assets/error-icon.svg"
-                alt="Error!"> Error! Invalid Entry</p>
+              <p class="error-message guess-error" id="guess-one-error" hidden>
+                 Error! Invalid Entry</p>
               <div class="error-placeholder">
                 <p class="error-message" hidden>
-                  <img class="error-icon" src="assets/error-icon.svg"
-                    alt="Error!"> Enter a name</p>
+                  Enter a name</p>
               </div>
               <h5>Challenger 2</h5>
               <div class="challengers-and-guesses">
@@ -71,15 +69,15 @@
                   <input class="guess-input" id="guess-two-input" type="number"
                     name="guess-two"></label>
               </div>
-              <p class="error-message guess-error" hidden>
-                <img class="error-icon" src="assets/error-icon.svg"
-                  alt="Error!"> Error! Invalid Entry</p>
+              <p class="error-message guess-error" id="guess-two-error" hidden>
+                Error! Invalid Entry</p>
               <div class="error-placeholder">
                 <p class="error-message" hidden>
-                  <img class="error-icon" src="assets/error-icon.svg"
-                    alt="Error!"> Enter a name</p>
+                  Enter a name</p>
               </div>
             <div class="card-two-buttons">
+              <p class="error-message guess-error" id="incomplete-input-error" hidden>
+                Error! Complete all inputs.</p>
               <input class="button" id="submit-guess-button" type="submit"
                 name="submit" value="SUBMIT GUESS">
               <button class="button reset-button" type="button" name="reset"
