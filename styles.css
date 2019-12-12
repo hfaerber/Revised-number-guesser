@@ -280,7 +280,7 @@ h5 {
   margin: 20px;
   width: 88%;
   color: #6e6e6e;
-  display: none;
+  /* display: none; */
 }
 
 .winner-card-top {
