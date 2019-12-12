@@ -9,10 +9,12 @@ const getRandomNumber = (min, max) => {
 // UPDATE Button handler
 $('#submit-range-button').on('click', function(event) {
   event.preventDefault();
-  $('#range-start').text($('#min-range-input').val())
-  $('#range-end').text($('#max-range-input').val())
-  randomNumber = getRandomNumber($('#min-range-input').val(), $('#max-range-input').val())
-  console.log(randomNumber)
+  if (validateCustomRange()) {
+    $('#range-start').text($('#min-range-input').val())
+    $('#range-end').text($('#max-range-input').val())
+    randomNumber = getRandomNumber($('#min-range-input').val(), $('#max-range-input').val())
+    console.log(randomNumber)
+  }
 })
 
 // SUBMIT GUESS button handler
@@ -32,6 +34,15 @@ const playGameHandler = () => {
   giveGuessFeedback('#guess-two-input', '.high-low-two');
 }
 
+const validateCustomRange = () => {
+  if($('#max-range-input').val() <= $('#min-range-input').val()) {
+    $('#range-error').removeAttr('hidden')
+    return false
+  } else {
+    $('#range-error').attr('hidden', true)
+    return true
+  }
+}
 
 const validGuessWithinRange = (guess, display) => {
   if ($(guess).val() < Number($('#range-start').text())) {
